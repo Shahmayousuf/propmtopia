@@ -17,5 +17,5 @@ const UserSchema=newSchema({
         type:String
     }
 })
-const User=model("User",UserSchema)
+const User=model.User("User",UserSchema)
 export default User;
