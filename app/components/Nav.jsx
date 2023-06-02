@@ -37,7 +37,7 @@ const Nav = () => {
                 </Link>
                 <button type="button" onClick={signOut}className="outline_btn">SignOut</button>
                 <Link href='/profile'>
-                    <Image src= '/assets/images/logo.svg' alt="profileimg"
+                    <Image src= '/assets/images/user.svg' alt="profileimg"
                      width={37}
                      height={37}
                      className="rounded-full"></Image>
@@ -62,7 +62,7 @@ const Nav = () => {
        className="sm:hidden flex relative">
        {isUserLoggedIn?(
               <div className="flex">
-                <Image src= '/assets/images/logo.svg' alt="profileimg"
+                <Image src= '/assets/images/user.svg' alt="profileimg"
                      width={37}
                      height={37}
                      className="rounded-full"
@@ -78,6 +78,11 @@ const Nav = () => {
                             <Link href='/create-prompt'
                             className="dropdown_link"  onClick={()=>setTogleDropdown(false)}
                             >       Create prompt</Link>
+                            <button type="butoon"
+                            onClick={()=>{
+                                setTogleDropdown(false)
+                                signOut()
+                            }}className="mt-5 w-full black_btn">SignOut</button>
                      
                         </div>
                      )}
