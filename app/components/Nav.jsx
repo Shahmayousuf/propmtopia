@@ -12,7 +12,7 @@ const Nav = () => {
 
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
-
+const isUserLoggedIn=true
   useEffect(() => {
     (async () => {
       const res = await getProviders();
@@ -33,9 +33,9 @@ const Nav = () => {
         <p className="logo_text">Promptopia</p>
       </Link>
 
-      {/* Desktop Navigation */}
+      {/* desktop view */}
       <div className="sm:flex hidden">
-        {session?.user ? (
+        { isUserLoggedIn ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
               Create Post
@@ -47,10 +47,10 @@ const Nav = () => {
 
             <Link href="/profile">
               <Image
-                src={session?.user.image}
+                src='/assets/images/user.svg'
                 width={37}
                 height={37}
-                className="rounded-full"
+                className="rounded-full" 
                 alt="profile"
               />
             </Link>
@@ -74,17 +74,17 @@ const Nav = () => {
         )}
       </div>
 
-      {/* Mobile Navigation */}
+      {/* mobile Navigation */}
       <div className="sm:hidden flex relative">
-        {session?.user ? (
+        { isUserLoggedIn ? (
           <div className="flex">
             <Image
-              src={session?.user.image}
+              src='/assets/images/user.svg'
               width={37}
               height={37}
               className="rounded-full"
               alt="profile"
-              onClick={() => setToggleDropdown(!toggleDropdown)}
+              onClick={() => setToggleDropdown((prev)=>!prev)}
             />
 
             {toggleDropdown && (

@@ -3,16 +3,17 @@ import GoogleProvider from "next-auth/providers/google";
 import { signIn } from "next-auth/react";
 import { connectToDB } from "@utils/database";
 import User from "@models/user";
-//  console.log( {clientId:'process.env.GOOGLE_ID',
-//  clientSecret:'process.env.GOOGLE_CLIENT_SECRET'});
 
+ console.log( {clientId:process.env.GOOGLE_ID,
+clientSecret:process.env.GOOGLE_CLIENT_SECRET});
 const handler = NextAuth({
   providers: [
     GoogleProvider({
-      clientId: "process.env.GOOGLE_ID",
-      clientSecret: "process.env.GOOGLE_CLIENT_SECRET",
+      clientId: process.env.GOOGLE_ID,   
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
+   
   async session({ session }) {
      const sessionUser=await User.findOne({
       email:session.user.email
