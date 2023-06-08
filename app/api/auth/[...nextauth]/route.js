@@ -4,6 +4,8 @@ import { signIn } from "next-auth/react";
 import { connectToDB } from "@utils/database";
 import User from "@models/user";
 
+
+
  console.log( {clientId:process.env.GOOGLE_ID,
 clientSecret:process.env.GOOGLE_CLIENT_SECRET});
 const handler = NextAuth({
@@ -25,11 +27,11 @@ const handler = NextAuth({
     try {
       await connectToDB();
       //check if a user already exists
-      const userExixts = await User.findOne({
+      const userExists = await User.findOne({
         email: profile.email,
       });
       //if not create a new user
-      if (!userExixts) {
+      if (!userExists) {
         await User.Create({
           email: profile.email,
           username: profile.name.replace("", "").toLowerCase(),

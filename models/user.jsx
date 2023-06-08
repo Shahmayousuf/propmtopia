@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const { Schema, model } = mongoose;
+const { Schema, model,models} = mongoose;
 
 const UserSchema = new Schema({
   email: {
@@ -17,5 +17,5 @@ const UserSchema = new Schema({
   },
 });
 
-const User = model("User", UserSchema);
+const User = models.User || model("User", UserSchema);
 export default User;
