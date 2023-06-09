@@ -80,7 +80,7 @@
  .black_btn {
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-semibold flex items-center justify-center  ;
 } 
-
+ 
 .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-transform hover:bg-black hover:text-white hover:translate-x-1 text-center text-sm  flex items-center justify-center;
 } 
@@ -131,9 +131,9 @@
   @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
 }
 
-/* .form_input {
+ .form_input {
   @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
-}  */
+}  
 
 /* Nav Component */
 .logo_text {
@@ -149,7 +149,7 @@
 } 
 
 /* PromptCard Component */
- /* .prompt_card {
+  .prompt_card {
   @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
 }
 
@@ -163,7 +163,7 @@
 
 .flex-end {
   @apply flex justify-end items-center;
-} */
+} 
 
 .flex-between {
   @apply flex justify-between items-center;
