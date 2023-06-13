@@ -16,4 +16,4 @@ required:[true,'prompt is required.'],
     }
 )
 const Prompt=models.Prompt || model('Prompt',promptSchema);
-export default prompt
+export default Prompt
