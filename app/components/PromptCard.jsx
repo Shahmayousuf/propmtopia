@@ -1,7 +1,9 @@
 'use client'
 import Image from "next/image"
+import { useState } from "react"
 
 const PromptCard = ({post,handleTagClick,handleEdit,hnadleDelete}) => {
+  const[copied,setCopied]=useState('')
   return (
     <div className="prompt_card"> 
       <div className="flex justify-between items-start gap-5">
@@ -16,8 +18,17 @@ const PromptCard = ({post,handleTagClick,handleEdit,hnadleDelete}) => {
           <p>{post.creator.email}</p>
         </div>
         </div>
+        <div className="copy_btn"
+        onClick={()=>{}}>
+          <Image src={copied==post.prompt?
+          '/assets/icons/tick.svg':
+          '/assets/icons.copy.svg'}
+          width={12}
+          height={12}></Image>
+        </div>
       </div>
-      
+      <p>{post.prompt}</p>
+      <p>{post.tag}</p>
     </div>
   )
 }
