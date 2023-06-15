@@ -29,6 +29,7 @@ const PromptCard = ({post,handleTagClick,handleEdit,hnadleDelete}) => {
       </div>
       <p>{post.prompt}</p>
       <p>{post.tag}</p>
+       
     </div>
   )
 }
