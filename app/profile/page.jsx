@@ -7,7 +7,7 @@ import { useState,useEffect } from "react";
 
 const MyProfile = () => {
     const{data:session}=useSession();
-    const router=useRouter()
+    const router=useRouter
     const[posts,setPosts]=useState([])
     useEffect(() => {
         const fetchPosts = async () => {
